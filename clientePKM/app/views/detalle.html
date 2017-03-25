@@ -1,0 +1,25 @@
+<h1>DETALLE POKEMON</h1>
+
+  <div class="form-group">
+    <label for="">Id: </label>
+    <label for="">{{pokemon.id}}</label>
+    <br>  
+    <label for="">Nombre:</label>
+    <label for="">{{pokemon.name}}</label>
+    <br>
+     <label for="">Experiencia:</label>
+    <label for="">{{pokemon.base_experience}}</label>
+    <br>
+    <label for="">Habilidades:</label>
+    <label for="" ng-repeat="abilitie in pokemon.abilities">{{abilitie.ability.name}},</label>
+    <br>
+    <label for="">Altura:</label>
+    <label>{{pokemon.height}}</label>
+    <br>
+    <label for="">Tipo:</label>
+    <label for="" ng-repeat="type in pokemon.types">{{type.type.name}},</label>
+    <br>
+    <label for="">Movimientos:</label>
+    <label ng-repeat="move in pokemon.moves">{{move.move.name}},</label>
+    <br>
+  </div>

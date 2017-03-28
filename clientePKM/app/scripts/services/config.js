@@ -14,5 +14,7 @@ angular.module('pokemonApp')
     POKEMON: 'pokemon/?limit=1000',
     DETALLE: 'pokemon/',
     TIPOS: 'type/',
-
+    ESPECIES: 'pokemon-species/',
+    EVOLUCIONES: 'evolution-chain/',
+  
   });

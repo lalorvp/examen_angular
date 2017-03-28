@@ -1,17 +1,22 @@
 <h1>DETALLE POKEMON</h1>
 
   <div class="form-group">
-    <label for="">Id: </label>
-    <label for="">{{pokemon.id}}</label>
+    <!--<label for="">Id: </label> -->
+    
+    <span class="label label-primary">ID</span>
+    <label for="">{{ pokemon.id }}</label>
     <br>  
     <label for="">Nombre:</label>
-    <label for="">{{pokemon.name}}</label>
+    <label for="">{{ pokemon.name }}</label>
+    <br>
+    <label for="">Descripcion:</label>
+    <label for="">{{ especie.flavor_text_entries[3].flavor_text }}</label>
     <br>
      <label for="">Experiencia:</label>
-    <label for="">{{pokemon.base_experience}}</label>
+    <label for="">{{ pokemon.base_experience }}</label>
     <br>
     <label for="">Habilidades:</label>
-    <label for="" ng-repeat="abilitie in pokemon.abilities">{{abilitie.ability.name}},</label>
+    <label for="" ng-repeat="abilitie in pokemon.abilities">{{ abilitie.ability.name }},</label>
     <br>
     <label for="">Altura:</label>
     <label>{{pokemon.height}}</label>
@@ -19,9 +24,24 @@
     <label for="">Tipo:</label>
     <label for="" ng-repeat="type in pokemon.types">{{type.type.name}},</label>
     <br>
+    <label for="">Id Evolución:</label>
+    <label for="" >{{idEvolucion}}</label>
+    <br>
     <label for="">Movimientos:</label>
     <label ng-repeat="move in pokemon.moves">{{move.move.name}},</label>
     <br>
     <img ng-src="{{pokemon.sprites.front_shiny}}" alt="">
     <br>
+    <table class="table table-bordered">
+            <tr >
+              <td><strong>Evoluciones</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <ul ng-repeat="evolucion in evoluciones">
+                  <li><a href="#/detalle/{{ evolucion.id }}">{{ evolucion.name }}</a></li>
+                </ul>
+              </td>
+            </tr>
+          </table>
   </div>

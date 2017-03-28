@@ -43,7 +43,7 @@ angular.module('pokemonApp')
 
     function listadoportipo(id){
     	var deferred = $q.defer();
-    	console.log('llega');
+    	console.log('service listadoportipo');
 
     	$http.get(Config.BASE + Config.TIPOS + id)
     		.then(function(response){
@@ -52,12 +52,36 @@ angular.module('pokemonApp')
     	return deferred.promise;	
     }
 
+    function especies(id){
+        var deferred = $q.defer();
+        console.log('service especies');
+
+        $http.get(Config.BASE + Config.ESPECIES + id)
+            .then(function(response){
+                deferred.resolve(response);
+            })
+        return deferred.promise;    
+    }
+
+    function evoluciones(id){
+        var deferred = $q.defer();
+        console.log('service evoluciones');
+
+        $http.get(Config.BASE + Config.EVOLUCIONES + id)
+            .then(function(response){
+                deferred.resolve(response);
+            })
+        return deferred.promise;    
+    }    
+
 
     return{
     	listado: listado,
     	detalle: detalle,
     	tipos: tipos,
-    	listadoportipo : listadoportipo,
+    	listadoportipo: listadoportipo,
+        especies: especies,
+        evoluciones: evoluciones,
     }
 
   });

@@ -39,22 +39,23 @@ angular.module('pokemonApp')
                 if (response.status == 200){
                   $scope.pokemons = [];  
 
-                  var listapokemon = response.data.pokemon;
-/*
-                  listapokemon.foreach(function(pokemon)){
+                  var listaPokemons = response.data.pokemon;
+
+                  listaPokemons.forEach(function(pokemon){
                     $scope.pokemons.push({
                       url: pokemon.pokemon.url,
                       name: pokemon.pokemon.name
                     });
 
-                  };
-*/
-                  console.log('lista de pokemon: ',listapokemon);
+                  });
+
+                  console.log('lista x tipo de pokemon: ',$scope.pokemons);
                   //console.log('lista de pokemon: ',listapokemon[0].pokemon.name);
                           
                 }else{
-                  console.log('Error pokemos por tipos');
+                  console.log('Error pokemons por tipos');
                 }
+
               });
 
     };

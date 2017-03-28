@@ -1,5 +1,5 @@
-<h1>LISTADO DE POKEMONES</h1>
-
+<h2><span class="label label-default">LISTA DE POKEMONS</span></h2>
+<br>
 <div>Buscar por Nombre:</div>
 <input type="text" placeholder="nombre"  ng-model="buscar.name">
 <br>
@@ -11,18 +11,17 @@
            required>
            	<option value="">Seleccione</option>
  </select>	
-
-<table class="table">
+<br>
+<table class="table table-bordered">
 	<thead>
-		<tr>
+		<tr class="danger">
 			<td>N°</td>
 			<td>Nombre</td>
 			<td>URL</td>
-
 		</tr>
 	</thead>
-	<tbody>
-		<tr ng-repeat="pokemon in pokemons | filter:buscar">
+	<tbody ng-repeat="pokemon in pokemons | filter:buscar">
+		<tr>
 			<td>{{ $index + 1 }}</td>
 			<td><a href="#/detalle/{{ pokemon.url.split('/')[6] }}">{{ pokemon.name}}</a></td>			
 			<td>{{ pokemon.url}}</td>			

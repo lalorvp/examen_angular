@@ -51,7 +51,7 @@ angular.module('pokemonApp')
 
                   console.log('lista x tipo de pokemon: ',$scope.pokemons);
                   //console.log('lista de pokemon: ',listapokemon[0].pokemon.name);
-                          
+                         
                 }else{
                   console.log('Error pokemons por tipos');
                 }

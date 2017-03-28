@@ -1,47 +1,57 @@
-<h1>DETALLE POKEMON</h1>
+<h2><span class="label label-default">{{ pokemon.name | uppercase}}</span></h2>
 
-  <div class="form-group">
-    <!--<label for="">Id: </label> -->
-    
-    <span class="label label-primary">ID</span>
-    <label for="">{{ pokemon.id }}</label>
-    <br>  
-    <label for="">Nombre:</label>
-    <label for="">{{ pokemon.name }}</label>
-    <br>
-    <label for="">Descripcion:</label>
-    <label for="">{{ especie.flavor_text_entries[3].flavor_text }}</label>
-    <br>
-     <label for="">Experiencia:</label>
-    <label for="">{{ pokemon.base_experience }}</label>
-    <br>
-    <label for="">Habilidades:</label>
-    <label for="" ng-repeat="abilitie in pokemon.abilities">{{ abilitie.ability.name }},</label>
-    <br>
-    <label for="">Altura:</label>
-    <label>{{pokemon.height}}</label>
-    <br>
-    <label for="">Tipo:</label>
-    <label for="" ng-repeat="type in pokemon.types">{{type.type.name}},</label>
-    <br>
-    <label for="">Id Evolución:</label>
-    <label for="" >{{idEvolucion}}</label>
-    <br>
-    <label for="">Movimientos:</label>
-    <label ng-repeat="move in pokemon.moves">{{move.move.name}},</label>
-    <br>
-    <img ng-src="{{pokemon.sprites.front_shiny}}" alt="">
-    <br>
+  <div class="form-group"> 
+
     <table class="table table-bordered">
-            <tr >
-              <td><strong>Evoluciones</strong></td>
+        <tbody>
+            <tr>
+                <td colspan="3" align="center"> <img ng-src="{{pokemon.sprites.front_default}}" alt=""></td>                
             </tr>
             <tr>
-              <td>
-                <ul ng-repeat="evolucion in evoluciones">
-                  <li><a href="#/detalle/{{ evolucion.id }}">{{ evolucion.name }}</a></li>
-                </ul>
-              </td>
+                <td class="danger" colspan="3" align="center"><strong>DATOS BÁSICOS </strong> </td>                
+            </tr>          
+            <tr>
+                <td align="center"><strong>Peso: </strong> {{ pokemon.weight / 10 | number:2}} kg.</td>
+                <td align="center"><strong>Altura: </strong> {{ pokemon.height / 10 | number:2}} m.</td>
+                <td align="center"><strong>Experiencia: </strong> {{ pokemon.base_experience}}</td>
+            </tr>               
+            <tr>
+                <td colspan="3"> {{ especie.flavor_text_entries[3].flavor_text}}</td>                
+            </tr>  
+            <tr>
+                <td class="warning" colspan="3" align="center"><strong>HABILIDADES </strong> </td>                
+            </tr>          
+            <tr>
+                <td colspan="3">
+                    <ul ng-repeat="abilitie in pokemon.abilities">
+                        <li>{{ abilitie.ability.name}}</li>
+                    </ul>
+                 </td>
             </tr>
-          </table>
-  </div>
+            <tr>
+                <td class="success" colspan="1" align="center"><strong>TIPOS </strong> </td>   
+                <td class="success" colspan="2" align="center"><strong>EVOLUCIONES</strong> </td>              
+            </tr>          
+            <tr>
+                <td colspan="1">
+                    <ul ng-repeat="type in pokemon.types">
+                        <li><a href="#/listado/{{ type.type.url.spli('/')[6] }}">{{ type.type.name }}</a></li>
+                    </ul>
+                 </td>
+                <td colspan="2">
+                    <ul ng-repeat="evolucion in evoluciones">
+                        <li><a href="#/detalle/{{ evolucion.id }}">{{ evolucion.name }}</a></li>
+                    </ul>
+                 </td>
+            </tr>
+            <tr>
+                <td class="active" colspan="3" align="center"><strong>HABITAT</strong> </td>                
+            </tr>          
+            <tr>
+                <td align="center" colspan="3"> {{especie.habitat.name}} </td>
+            </tr>                 
+        </tbody>
+        
+    </table>
+
+</div>

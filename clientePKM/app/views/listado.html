@@ -1,19 +1,22 @@
 <h1>LISTADO DE POKEMONES</h1>
 
-<div>Buscar</div>
+<div>Buscar por Nombre:</div>
+<input type="text" placeholder="nombre"  ng-model="buscar.name">
+<br>
+<div>Buscar por Tipo:</div>
  <select class="form-control" 
            ng-model="buscar.type" 
 			ng-options="tipo.url.split('/')[6] as tipo.name for tipo in tipos"
 			ng-change="listadoportipo(buscar.type)"
            required>
            	<option value="">Seleccione</option>
-           </select>	
+ </select>	
 
 <table class="table">
 	<thead>
 		<tr>
+			<td>N°</td>
 			<td>Nombre</td>
-			<td>Especie</td>
 			<td>URL</td>
 
 		</tr>

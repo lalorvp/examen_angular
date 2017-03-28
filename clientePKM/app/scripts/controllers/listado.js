@@ -40,7 +40,7 @@ angular.module('pokemonApp')
                   $scope.pokemons = [];  
 
                   var listapokemon = response.data.pokemon;
-
+/*
                   listapokemon.foreach(function(pokemon)){
                     $scope.pokemons.push({
                       url: pokemon.pokemon.url,
@@ -48,7 +48,7 @@ angular.module('pokemonApp')
                     });
 
                   };
-
+*/
                   console.log('lista de pokemon: ',listapokemon);
                   //console.log('lista de pokemon: ',listapokemon[0].pokemon.name);
                           

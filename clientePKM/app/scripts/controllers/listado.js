@@ -15,7 +15,7 @@ angular.module('pokemonApp')
     	.then(function(response){
     		console.log(response);
     		if (response.status == 200){
-    			$scope.pokemons = response.data.results;
+    			$scope.pokemons = response.data.results;          
     		}else{
     			console.log('Error listado');
     		}
@@ -39,7 +39,7 @@ angular.module('pokemonApp')
                 if (response.status == 200){
                   $scope.pokemons = [];  
 
-                  var listaPokemons = response.data.pokemon;
+                  var listaPokemons = response.data.pokemon;                  
 
                   listaPokemons.forEach(function(pokemon){
                     $scope.pokemons.push({

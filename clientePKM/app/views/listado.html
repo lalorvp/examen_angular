@@ -17,14 +17,14 @@
 		<tr class="danger">
 			<td>N°</td>
 			<td>Nombre</td>
-			<td>URL</td>
+			<td>URL</td>			
 		</tr>
 	</thead>
 	<tbody ng-repeat="pokemon in pokemons | filter:buscar">
 		<tr>
 			<td>{{ $index + 1 }}</td>
 			<td><a href="#/detalle/{{ pokemon.url.split('/')[6] }}">{{ pokemon.name}}</a></td>			
-			<td>{{ pokemon.url}}</td>			
+			<td>{{ pokemon.url}}</td>						
 		</tr>
 		
 	</tbody>
